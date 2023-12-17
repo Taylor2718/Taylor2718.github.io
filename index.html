@@ -16,51 +16,24 @@
             position: relative;
             text-align: center;
             color: #fff;
-            background: #3498db; /* Blue background color for the header */
-            padding: 80px 0; /* Adjust the padding as needed */
+            background: #3498db;
+            padding: 80px 0;
         }
 
         header img {
             max-width: 100%;
             height: auto;
-            border-radius: 50%; /* Optional: Apply a border-radius to the image */
+            border-radius: 50%;
         }
 
-        section {
-            margin-bottom: 40px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Styles for the profile picture */
+        .profile-picture {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
         }
 
-        h2 {
-            color: #3498db;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #666;
-        }
-
-        nav {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        nav a {
-            display: inline-block;
-            margin-right: 15px;
-            text-decoration: none;
-            color: #555;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
+        /* Rest of your styles... */
 
         .subtitle {
             text-align: center;
@@ -73,10 +46,19 @@
 
     <!-- Header with Cover Image -->
     <header>
-        <img src="images/TP-PP.jpg" alt="Profile Picture for Academic Website">
+        <img src="images/Bempton.jpeg" alt="Cover Image">
         <h1>Taylor Pomfret</h1>
         <p>Theoretical Physicist</p>
     </header>
+
+    <!-- About Me Section with Profile Picture -->
+    <section id="about">
+        <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
+        <h2>About Me</h2>
+        <p>
+            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
+        </p>
+    </section>
 
     <!-- Navigation Section -->
     <nav>
@@ -91,14 +73,6 @@
     <div class="subtitle">
         <p>Exploring the Universe through Theoretical Physics</p>
     </div>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
-        </p>
-    </section>
 
     <!-- Projects Section -->
     <section id="projects">
