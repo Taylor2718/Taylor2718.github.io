@@ -12,6 +12,20 @@
             color: #333;
         }
 
+        header {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            background: #3498db; /* Blue background color for the header */
+            padding: 80px 0; /* Adjust the padding as needed */
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%; /* Optional: Apply a border-radius to the image */
+        }
+
         section {
             margin-bottom: 40px;
             padding: 20px;
@@ -56,6 +70,13 @@
     </style>
 </head>
 <body>
+
+    <!-- Header with Cover Image -->
+    <header>
+        <img src="images/TP-PP.jpg" alt="Profile Picture for Academic Website">
+        <h1>Taylor Pomfret</h1>
+        <p>Theoretical Physicist</p>
+    </header>
 
     <!-- Navigation Section -->
     <nav>
@@ -111,18 +132,12 @@
         </p>
     </section>
 
-    <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
     <script>
-        // Smooth scrolling when clicking on navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        function scrollToSection(sectionId) {
+            document.querySelector(sectionId).scrollIntoView({
+                behavior: 'smooth'
             });
-        });
+        }
     </script>
 </body>
 </html>
