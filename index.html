@@ -12,11 +12,11 @@
 
     <!-- Navigation Section -->
     <nav>
-        <a href="#" onclick="loadSection('about.html')">1. About Me</a>
-        <a href="#" onclick="loadSection('projects.html')">2. Projects</a>
-        <a href="#" onclick="loadSection('teaching.html')">3. Teaching</a>
-        <a href="#" onclick="loadSection('writing.html')">4. Writing</a>
-        <a href="#" onclick="loadSection('contact.html')">5. Contact Me</a>
+        <a href="#about">1. About Me</a>
+        <a href="#projects">2. Projects</a>
+        <a href="#teaching">3. Teaching</a>
+        <a href="#writing">4. Writing</a>
+        <a href="#contact">5. Contact Me</a>
     </nav>
 
     <!-- Subtitle Section -->
@@ -24,22 +24,57 @@
         <p>Exploring the Universe through Theoretical Physics</p>
     </div>
 
-    <!-- Content Container -->
-    <div id="content-container"></div>
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>
+            Explore my various projects related to theoretical physics. From quantum mechanics to cosmology, each project reflects my commitment to unraveling the mysteries of the universe. You can find details and code repositories on my <a href="https://github.com/Taylor2718" target="_blank">GitHub</a>.
+        </p>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <p>
+            Sharing knowledge is a key aspect of my academic journey. I have experience teaching [specific subjects] and am passionate about inspiring the next generation of physicists.
+        </p>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing">
+        <h2>Writing</h2>
+        <p>
+            Read my articles and writings on theoretical physics. Whether it's research publications, blog posts, or articles, I enjoy conveying complex ideas in an accessible manner. Explore my writings on my <a href="[link-to-writing]" target="_blank">writing page</a>.
+        </p>
+    </section>
+
+    <!-- Contact Section (Feel free to add or modify) -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>
+            If you have any questions or would like to get in touch, feel free to contact me at [your email address].
+        </p>
+    </section>
 
     <script>
-        function loadSection(sectionFile) {
-            fetch(sectionFile)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('content-container').innerHTML = data;
-                    // Scroll to the loaded section
-                    document.querySelector('#content-container').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                })
-                .catch(error => console.error('Error loading section:', error));
-        }
+        // Smooth scrolling when clicking on navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
