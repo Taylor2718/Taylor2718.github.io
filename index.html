@@ -3,96 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylor Pomfret - Theoretical Physics</title>
+    <title>Your Website</title>
     <style>
         body {
-            font-family: 'Fira Code', monospace;
-            margin: 0;
-            background-color: #f5f5dc; /* Nice beige background */
-            color: #444; /* Darker text color for better readability */
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
         }
 
-        /* Updated styles for profile picture */
-        .profile-container {
-            float: left; /* Changed from float: right to float: left */
-            margin: 10px;
-        }
-
-        .profile-picture {
-            max-width: 150px; /* Adjust the width as needed */
-            height: auto;
-            border-radius: 50%;
-        }
-
-        /* Styles for sections */
-        section {
-            margin-top: 20px;
-        }
-
-        /* Rest of your styles... */
-
-        .subtitle {
-            text-align: center;
-            font-size: 1.5em;
-            color: #555;
-        }
         section {
             margin-top: 20px;
         }
 
         .summary {
-            width: 50%; /* Adjust as needed */
+            width: 50%;
             float: left;
         }
 
         .iframe-container {
-            width: 50%; /* Adjust as needed */
+            width: 50%;
             float: right;
             margin-left: 20px;
         }
         
         iframe {
             width: 100%;
-            height: 400px; /* Adjust the height as needed */
+            height: 400px;
             border: none;
         }
-    </style>
 
-    <!-- Link to the Fira Code font -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+        .slideshow-container {
+            max-width: 50%;
+            position: relative;
+            overflow: hidden;
+            float: left;
+        }
+
+        .slideshow-img {
+            width: 100%;
+            display: none;
+        }
+
+        .slideshow-img.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <!-- About Me Section with Profile Picture -->
-    <section id="about">
-        <div class="profile-container">
-            <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
-        </div>
-        <h2>About Me</h2>
-        <p>
-            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
-        </p>
-    </section>
-
-    <!-- Navigation Section -->
-    <nav>
-        <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
-        <a href="#projects" onclick="scrollToSection('#projects')">2. Projects</a>
-        <a href="#teaching" onclick="scrollToSection('#teaching')">3. Teaching</a>
-        <a href="#writing" onclick="scrollToSection('#writing')">4. Writing</a>
-        <a href="#contact" onclick="scrollToSection('#contact')">5. Contact Me</a>
-    </nav>
-
-    <!-- Subtitle Section -->
-    <div class="subtitle">
-        <p>Exploring the Universe through Theoretical Physics</p>
-    </div>
-
-    <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
         <p>
@@ -111,17 +70,27 @@
         <div class="iframe-container">
             <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
         </div>
+
+        <!-- PNG Slideshow -->
+        <div class="slideshow-container">
+            <img class="slideshow-img active" src="images/sat-det-1.jpg" alt="Image 1">
+            <img class="slideshow-img" src="images/sat-det-2.png" alt="Image 2">
+            <img class="slideshow-img" src="images/sat-det-3.png" alt="Image 3">
+            <img class="slideshow-img" src="images/sat-det-4.png" alt="Image 4">
+            <img class="slideshow-img" src="images/sat-det-5.png" alt="Image 5">
+            <img class="slideshow-img" src="images/sat-det-6.png" alt="Image 6">
+            <img class="slideshow-img" src="images/sat-det-7.png" alt="Image 7">
+            <img class="slideshow-img" src="images/sat-det-8.png" alt="Image 8">
+        </div>
     </section>
 
-    <!-- Teaching Section -->
     <section id="teaching">
         <h2>Teaching</h2>
         <p>
             Sharing knowledge is a key aspect of my academic journey. I have experience teaching [specific subjects] and am passionate about inspiring the next generation of physicists.
         </p>
-        
+    </section>
 
-    <!-- Writing Section -->
     <section id="writing">
         <h2>Writing</h2>
         <p>
@@ -129,20 +98,34 @@
         </p>
     </section>
 
-    <!-- Contact Section (Feel free to add or modify) -->
     <section id="contact">
         <h2>Contact Me</h2>
         <p>
-            If you have any questions or would like to get in touch, feel free to contact me at <a href="mailto:top21@ic.ac.uk">top21@ic.ac.uk</a>.
+            If you have any questions or would like to get in touch, feel free to contact me at [your email address].
         </p>
     </section>
 
+    <!-- Other sections of your website -->
+
     <script>
-        function scrollToSection(sectionId) {
-            document.querySelector(sectionId).scrollIntoView({
-                behavior: 'smooth'
+        // JavaScript for slideshow effect
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slideshow-img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
             });
         }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Change image every 3 seconds (adjust as needed)
+        setInterval(nextImage, 3000);
     </script>
+
 </body>
 </html>
