@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>Taylor Pomfret - Theoretical Physicist</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
-            color: #333;
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            background-color: #f5f5dc; /* Nice beige background */
+            color: #444; /* Darker text color for better readability */
+            padding: 20px;
         }
 
+        .profile-container {
+            float: right;
+            margin: 10px;
+        }
+
+        .profile-picture {
+            max-width: 150px; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Styles for sections */
         section {
             margin-top: 20px;
         }
@@ -87,14 +100,33 @@
         <p>Theoretical Physicist</p>
     </header>
 
-    <section id="about">
-        <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
-        <h2>About Me</h2>
-        <p>
-            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
-        </p>
-    </section>
-
+      <!-- Link to the Fira Code font -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+      <style>
+          @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+      </style>
+  </head>
+  <body>
+  
+      <!-- About Me Section with Profile Picture -->
+      <section id="about">
+          <div class="profile-container">
+              <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
+          </div>
+          <h2>About Me</h2>
+          <p>
+              Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
+          </p>
+      </section>
+  
+      <!-- Navigation Section -->
+      <nav>
+          <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
+          <a href="#projects" onclick="scrollToSection('#projects')">2. Projects</a>
+          <a href="#teaching" onclick="scrollToSection('#teaching')">3. Teaching</a>
+          <a href="#writing" onclick="scrollToSection('#writing')">4. Writing</a>
+          <a href="#contact" onclick="scrollToSection('#contact')">5. Contact Me</a>
+      </nav>
     <section id="projects">
         <h2>Projects</h2>
         <p>
@@ -111,19 +143,19 @@
 
         <!-- Embed PDF presentation using iframe -->
         <div class="iframe-container">
-            <iframe src="satellite_presentation.pdf" height="600px"></iframe>
+            <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
         </div>
 
         <!-- PNG Slideshow -->
         <div class="slideshow-container">
-            <img class="slideshow-img active" src="sat-det-1.png" alt="Image 1">
-            <img class="slideshow-img" src="sat-det-2.png" alt="Image 2">
-            <img class="slideshow-img" src="sat-det-3.png" alt="Image 3">
-            <img class="slideshow-img" src="sat-det-4.png" alt="Image 4">
-            <img class="slideshow-img" src="sat-det-5.png" alt="Image 5">
-            <img class="slideshow-img" src="sat-det-6.png" alt="Image 6">
-            <img class="slideshow-img" src="sat-det-7.png" alt="Image 7">
-            <img class="slideshow-img" src="sat-det-8.png" alt="Image 8">
+            <img class="slideshow-img active" src="images/sat-det-1.jpg" alt="Image 1">
+            <img class="slideshow-img" src="images/sat-det-2.png" alt="Image 2">
+            <img class="slideshow-img" src="images/sat-det-3.png" alt="Image 3">
+            <img class="slideshow-img" src="images/sat-det-4.png" alt="Image 4">
+            <img class="slideshow-img" src="images/sat-det-5.png" alt="Image 5">
+            <img class="slideshow-img" src="images/sat-det-6.png" alt="Image 6">
+            <img class="slideshow-img" src="images/sat-det-7.png" alt="Image 7">
+            <img class="slideshow-img" src="images/sat-det-8.png" alt="Image 8">
 
             <!-- Image Bar with Navigation Arrows and Caption -->
             <div class="image-bar">
