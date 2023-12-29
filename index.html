@@ -16,6 +16,20 @@
             margin-top: 20px;
         }
 
+        header {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            background: #3498db;
+            padding: 80px 0;
+        }
+
+        header img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
         .summary {
             width: 50%;
             float: left;
@@ -48,9 +62,38 @@
         .slideshow-img.active {
             display: block;
         }
+
+        .image-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .image-caption {
+            text-align: center;
+            width: 100%;
+        }
+
+        .navigation-arrows {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+
+    <header>
+        <img src="images/TP-Square-PP.jpeg" alt="Profile Picture">
+        <h1>Taylor Pomfret</h1>
+        <p>Theoretical Physicist</p>
+    </header>
+
+    <section id="about">
+        <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
+        <h2>About Me</h2>
+        <p>
+            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
+        </p>
+    </section>
 
     <section id="projects">
         <h2>Projects</h2>
@@ -68,19 +111,26 @@
 
         <!-- Embed PDF presentation using iframe -->
         <div class="iframe-container">
-            <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
+            <iframe src="satellite_presentation.pdf" height="600px"></iframe>
         </div>
 
         <!-- PNG Slideshow -->
         <div class="slideshow-container">
-            <img class="slideshow-img active" src="images/sat-det-1.jpg" alt="Image 1">
-            <img class="slideshow-img" src="images/sat-det-2.png" alt="Image 2">
-            <img class="slideshow-img" src="images/sat-det-3.png" alt="Image 3">
-            <img class="slideshow-img" src="images/sat-det-4.png" alt="Image 4">
-            <img class="slideshow-img" src="images/sat-det-5.png" alt="Image 5">
-            <img class="slideshow-img" src="images/sat-det-6.png" alt="Image 6">
-            <img class="slideshow-img" src="images/sat-det-7.png" alt="Image 7">
-            <img class="slideshow-img" src="images/sat-det-8.png" alt="Image 8">
+            <img class="slideshow-img active" src="sat-det-1.png" alt="Image 1">
+            <img class="slideshow-img" src="sat-det-2.png" alt="Image 2">
+            <img class="slideshow-img" src="sat-det-3.png" alt="Image 3">
+            <img class="slideshow-img" src="sat-det-4.png" alt="Image 4">
+            <img class="slideshow-img" src="sat-det-5.png" alt="Image 5">
+            <img class="slideshow-img" src="sat-det-6.png" alt="Image 6">
+            <img class="slideshow-img" src="sat-det-7.png" alt="Image 7">
+            <img class="slideshow-img" src="sat-det-8.png" alt="Image 8">
+
+            <!-- Image Bar with Navigation Arrows and Caption -->
+            <div class="image-bar">
+                <div class="navigation-arrows" onclick="prevImage()">❮</div>
+                <div class="image-caption"></div>
+                <div class="navigation-arrows" onclick="nextImage()">❯</div>
+            </div>
         </div>
     </section>
 
@@ -101,7 +151,7 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <p>
-            If you have any questions or would like to get in touch, feel free to contact me at [your email address].
+            If you have any questions or would like to get in touch, feel free to contact me at <a href="mailto:top21@ic.ac.uk">top21@ic.ac.uk</a>.
         </p>
     </section>
 
@@ -111,11 +161,13 @@
         // JavaScript for slideshow effect
         let currentIndex = 0;
         const images = document.querySelectorAll('.slideshow-img');
+        const captions = ["Caption 1", "Caption 2", "Caption 3", "Caption 4", "Caption 5", "Caption 6", "Caption 7", "Caption 8"];
 
         function showImage(index) {
             images.forEach((img, i) => {
                 img.classList.toggle('active', i === index);
             });
+            document.querySelector('.image-caption').textContent = captions[index];
         }
 
         function nextImage() {
@@ -123,8 +175,16 @@
             showImage(currentIndex);
         }
 
-        // Change image every 3 seconds (adjust as needed)
-        setInterval(nextImage, 3000);
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Initial display
+        showImage(currentIndex);
+
+        // Image navigation on arrow click
+        document.querySelector('.navigation-arrows').addEventListener('click', nextImage);
     </script>
 
 </body>
