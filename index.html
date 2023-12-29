@@ -190,30 +190,30 @@
         let currentIndex = 0;
         const images = document.querySelectorAll('.slideshow-img');
         const captions = ["Caption 1", "Caption 2", "Caption 3", "Caption 4", "Caption 5", "Caption 6", "Caption 7", "Caption 8"];
-
+    
         function showImage(index) {
             images.forEach((img, i) => {
                 img.classList.toggle('active', i === index);
             });
             document.querySelector('.image-caption').textContent = captions[index];
         }
-
+    
         function nextImage() {
             currentIndex = (currentIndex + 1) % images.length;
             showImage(currentIndex);
         }
-
+    
         function prevImage() {
             currentIndex = (currentIndex - 1 + images.length) % images.length;
             showImage(currentIndex);
         }
-
+    
         // Initial display
         showImage(currentIndex);
-
+    
         // Image navigation on arrow click
-        document.querySelector('.navigation-arrows:nth-child(1)').addEventListener('click', prevImage);
-        document.querySelector('.navigation-arrows:nth-child(3)').addEventListener('click', nextImage);
+        document.querySelector('.navigation-arrows:nth-of-type(1)').addEventListener('click', prevImage);
+        document.querySelector('.navigation-arrows:nth-of-type(3)').addEventListener('click', nextImage);
     </script>
 
 </body>
