@@ -80,6 +80,26 @@
         hr:hover {
             width: 100%;
         }
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            position: fixed; /* Fixed position */
+            bottom: 0; /* Align to the bottom */
+            left: 0;
+            width: 100%; /* Full width */
+            padding: 10px;
+            background-color: #fce29a; /* Yellow color */
+            color: #444;
+            border-top: 2px solid #444; /* Darker color for the top border */
+        }
+
+        .navigation-button {
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +135,12 @@
             <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
         </div>
     </section>
+    <!-- Navigation buttons -->
+    <div class="project-navigation">
+        <a class="navigation-button" href="mnp-project.html">Previous Article</a>
+        <a class="navigation-button" href="templates-project.html">Next Article</a>
+    </div>
+</section>
 
     <!-- Include your JavaScript for slideshow effect here -->
     <script>
@@ -140,6 +166,12 @@
         }
 
         showImage(currentIndex);
+
+        document.querySelector('.navigation-button').addEventListener('click', function() {
+            // Redirect to the appropriate project page
+            // Replace "previous-project.html" and "next-project.html" with the actual file names
+            window.location.href = this.getAttribute('href');
+        });
     </script>
 
 </body>
