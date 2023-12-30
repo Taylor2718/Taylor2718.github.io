@@ -122,100 +122,11 @@
       <!-- Navigation Section -->
       <nav>
           <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
-          <a href="#projects" onclick="scrollToSection('#projects')">2. Projects</a>
-          <a href="#teaching" onclick="scrollToSection('#teaching')">3. Teaching</a>
-          <a href="#writing" onclick="scrollToSection('#writing')">4. Writing</a>
-          <a href="#contact" onclick="scrollToSection('#contact')">5. Contact Me</a>
+          <a href="projects.html">2. Projects</a>
+          <a href="teaching.html">3. Teaching</a>
+          <a href="writing.html">4. Writing</a>
+          <a href="contact.html">5. Contact Me</a>
       </nav>
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>
-            Explore my various projects related to theoretical physics. From quantum mechanics to cosmology, each project reflects my commitment to unraveling the mysteries of the universe. You can find details and code repositories on my <a href="https://github.com/Taylor2718" target="_blank">GitHub</a>.
-        </p>
-
-        <!-- Satellite Detection Project -->
-        <h3>Satellite Detection Project</h3>
-        <div class="summary">
-            <p>
-                The Satellite Detection Project focuses on developing advanced algorithms for the detection and tracking of satellites in Earth's orbit. Leveraging principles of signal processing and machine learning, our goal is to enhance satellite monitoring capabilities for various applications, including space debris management and satellite communication optimization.
-            </p>
-        </div>
-
-        <!-- Embed PDF presentation using iframe -->
-        <div class="iframe-container">
-            <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
-        </div>
-
-        <!-- PNG Slideshow -->
-        <div class="slideshow-container">
-            <img class="slideshow-img active" src="images/sat-det-1.jpg" alt="Image 1">
-            <img class="slideshow-img" src="images/sat-det-2.jpg" alt="Image 2">
-            <img class="slideshow-img" src="images/sat-det-3.jpg" alt="Image 3">
-            <img class="slideshow-img" src="images/sat-det-4.jpg" alt="Image 4">
-            <img class="slideshow-img" src="images/sat-det-5.jpg" alt="Image 5">
-            <img class="slideshow-img" src="images/sat-det-6.jpg" alt="Image 6">
-            <img class="slideshow-img" src="images/sat-det-7.jpg" alt="Image 7">
-            <img class="slideshow-img" src="images/sat-det-8.jpg" alt="Image 8">
-
-            <!-- Image Bar with Navigation Arrows and Caption -->
-            <div class="image-bar">
-                <div class="navigation-arrows" onclick="prevImage()">❮</div>
-                <div class="image-caption"></div>
-                <div class="navigation-arrows" onclick="nextImage()">❯</div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="teaching">
-        <h2>Teaching</h2>
-        <p>
-            Sharing knowledge is a key aspect of my academic journey. I have experience teaching [specific subjects] and am passionate about inspiring the next generation of physicists.
-        </p>
-    </section>
-
-    <section id="writing">
-        <h2>Writing</h2>
-        <p>
-            Read my articles and writings on theoretical physics. Whether it's research publications, blog posts, or articles, I enjoy conveying complex ideas in an accessible manner. Explore my writings on my <a href="[link-to-writing]" target="_blank">writing page</a>.
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>
-            If you have any questions or would like to get in touch, feel free to contact me at <a href="mailto:top21@ic.ac.uk">top21@ic.ac.uk</a>.
-        </p>
-    </section>
-
-    <!-- Other sections of your website -->
-
-    <script>
-        // JavaScript for slideshow effect
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.slideshow-img');
-        const captions = ["Caption 1", "Caption 2", "Caption 3", "Caption 4", "Caption 5", "Caption 6", "Caption 7", "Caption 8"];
     
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-            document.querySelector('.image-caption').textContent = captions[index];
-        }
-    
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
-        }
-    
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage(currentIndex);
-        }
-    
-        // Initial display
-        showImage(currentIndex);
-    </script>
-
 </body>
 </html>
