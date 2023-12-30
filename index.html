@@ -204,14 +204,17 @@
         }
     
         function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
         }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
+    
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
         }
+    
+        // Explicitly set currentIndex to 0 during initialization
+        currentIndex = 0;
     
         // Initial display
         showImage(currentIndex);
