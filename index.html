@@ -204,21 +204,21 @@
         }
     
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
         }
-    
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + 0) % images.length;
-            showImage(currentIndex);
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
         }
     
         // Initial display
         showImage(currentIndex);
     
         // Image navigation on arrow click
-        document.querySelector('.navigation-arrows:nth-of-type(1)').addEventListener('click', prevImage);
-        document.querySelector('.navigation-arrows:nth-of-type(3)').addEventListener('click', nextImage);
+        document.querySelector('.navigation-arrows:first-of-type').addEventListener('click', prevImage);
+        document.querySelector('.navigation-arrows:last-of-type').addEventListener('click', nextImage);
     </script>
 
 </body>
