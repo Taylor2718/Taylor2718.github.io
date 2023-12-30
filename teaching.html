@@ -1,10 +1,9 @@
-<!-- teaching.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching - Taylor Pomfret</title>
+    <title>Projects - Taylor Pomfret</title>
     <style>
         body {
             font-family: 'Fira Code', monospace;
@@ -14,15 +13,11 @@
             padding: 20px;
         }
 
-        .profile-container {
-            float: right;
-            margin: 10px;
-        }
-
-        .profile-picture {
-            max-width: 150px; /* Adjust the width as needed */
-            height: auto;
-            border-radius: 50%;
+        /* Centered content with 30% width */
+        .centered-content {
+            width: 30%;
+            margin: 0 auto;
+            text-align: left; /* Align text to the left */
         }
 
         /* Styles for sections */
@@ -30,77 +25,96 @@
             margin-top: 20px;
         }
 
-        header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            background: #fce29a;
-            padding: 80px 0;
+        h2 {
+            font-size: 2.5em; /* Adjust the font size as needed */
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1.5em; /* Adjust the font size as needed */
+            font-weight: bold;
         }
 
-        header img {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
-        }
-
-        .summary {
-            width: 50%;
-            float: left;
-        }
-
-        .iframe-container {
-            width: 50%;
-            float: right;
-            margin-left: 20px;
-        }
-        
-        iframe {
-            width: 100%;
-            height: 400px;
+        /* Style the horizontal line */
+        hr {
+            height: 2px;
+            background-color: #fce29a; /* Yellow color */
             border: none;
+            transition: width 0.3s; /* Add transition for smooth animation */
         }
 
-        .slideshow-container {
-            max-width: 50%;
-            position: relative;
-            overflow: hidden;
-            float: left;
-        }
-
-        .slideshow-img {
-            width: 100%;
-            display: none;
-        }
-
-        .slideshow-img.active {
-            display: block;
-        }
-
-        .image-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .image-caption {
-            text-align: center;
+        /* Increase line width on hover */
+        hr:hover {
             width: 100%;
         }
 
-        .navigation-arrows {
-            cursor: pointer;
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-list li {
+            margin-bottom: 20px;
+        }
+
+        .project-list a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .project-list p.project-date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .project-list .project-line {
+            width: 30px; /* Set the initial width of the line */
+            height: 2px;
+            background-color: #fce29a; /* Adjust color as needed */
+            transition: width 0.3s; /* Add a smooth transition effect */
+        }
+
+        .project-list li:hover .project-line {
+            width: 100%; /* Expand the width on hover */
         }
     </style>
 </head>
 <body>
 
     <!-- Teaching Section -->
-    <section id="teaching">
+    <section id="teaching" class="centered-content">
         <h2>Teaching</h2>
         <p>
-            Sharing knowledge is a key aspect of my academic journey. I have experience teaching [specific subjects] and am passionate about inspiring the next generation of physicists.
+            Sharing knowledge is a key aspect of my academic journey. I have experience teaching maths and physics and I am passionate about inspiring the next generation of physicists.
         </p>
+
+        
+        <!-- Horizontal line -->
+        <hr>
+
+        <!-- Teaching List, adapted from coded project-list in projects.html -->
+        <ul class="project-list">
+            <li>
+                <a href="teaching-list/compos.html">COMPOS</a>
+                <p class="project-date">Materials for Tutor Group 22 (November 2023 - Present)</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="teaching-list/zerogravity.html">Zero Gravity</a>
+                <p class="project-date">Mentoring (from the perspective of a mentee and a mentor)</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="teaching-list/tutoring.html">Tutoring</a>
+                <p class="project-date">STEMaccess, GoodGuidesTutoring, and future projects!</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="teaching-list/ogden.html">Ogden</a>
+                <p class="project-date">TeachPhysics Internship (Summer 2023)</p>
+                <div class="project-line"></div>
+            </li>
+        </ul>
     </section>
 
 </body>
