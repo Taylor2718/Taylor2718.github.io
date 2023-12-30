@@ -13,13 +13,19 @@
             padding: 20px;
         }
 
+        /* Centered content with 30% width */
+        .centered-content {
+            width: 30%;
+            margin: 0 auto;
+            text-align: left; /* Align text to the left */
+        }
+
         .profile-container {
-            float: right;
-            margin: 10px;
+            margin: 10px 0; /* Add margin to the top */
         }
 
         .profile-picture {
-            max-width: 150px; /* Adjust the width as needed */
+            max-width: 100%; /* Adjust the width as needed */
             height: auto;
             border-radius: 50%;
         }
@@ -29,104 +35,44 @@
             margin-top: 20px;
         }
 
-        header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            background: #fce29a;
-            padding: 80px 0;
+        h2 {
+            font-size: 1.5em; /* Adjust the font size as needed */
+            font-weight: bold;
         }
 
-        header img {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
+        nav {
+            border-left: 5px solid #fce29a; /* Yellow vertical line */
+            padding-left: 10px; /* Add some space to the left of the list */
+            margin-top: 20px;
         }
 
-        .summary {
-            width: 50%;
-            float: left;
-        }
-
-        .iframe-container {
-            width: 50%;
-            float: right;
-            margin-left: 20px;
-        }
-        
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-        }
-
-        .slideshow-container {
-            max-width: 50%;
-            position: relative;
-            overflow: hidden;
-            float: left;
-        }
-
-        .slideshow-img {
-            width: 100%;
-            display: none;
-        }
-
-        .slideshow-img.active {
-            display: block;
-        }
-
-        .image-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .image-caption {
-            text-align: center;
-            width: 100%;
-        }
-
-        .navigation-arrows {
-            cursor: pointer;
+        nav a {
+            display: block; /* Each link on a new line */
+            margin-bottom: 10px; /* Add some space between links */
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="images/TP-Square-PP.jpeg" alt="Profile Picture">
-        <h1>Taylor Pomfret</h1>
-        <p>Theoretical Physicist</p>
-    </header>
+    <!-- About Me Section with Profile Picture -->
+    <section id="about" class="centered-content">
+        <h2>Taylor<br>Pomfret</h2>
+        <div class="profile-container">
+            <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
+        </div>
+        <p>
+            Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
+        </p>
+    </section>
 
-      <!-- Link to the Fira Code font -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-      <style>
-          @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
-      </style>
-  </head>
-  <body>
-  
-      <!-- About Me Section with Profile Picture -->
-      <section id="about">
-          <div class="profile-container">
-              <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
-          </div>
-          <h2>About Me</h2>
-          <p>
-              Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
-          </p>
-      </section>
-  
-      <!-- Navigation Section -->
-      <nav>
-          <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
-          <a href="projects.html">2. Projects</a>
-          <a href="teaching.html">3. Teaching</a>
-          <a href="writing.html">4. Writing</a>
-          <a href="contact.html">5. Contact Me</a>
-      </nav>
+    <!-- Navigation Section -->
+    <nav class="centered-content">
+        <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
+        <a href="projects.html">2. Projects</a>
+        <a href="teaching.html">3. Teaching</a>
+        <a href="writing.html">4. Writing</a>
+        <a href="contact.html">5. Contact Me</a>
+    </nav>
     
 </body>
 </html>
