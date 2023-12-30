@@ -81,20 +81,10 @@
             width: 100%;
         }
         /* Navigation buttons */
-        .project-navigation {
+        .navigation-buttons {
             display: flex;
             justify-content: space-between;
-            position: fixed; /* Fixed position */
-            bottom: 0; /* Align to the bottom */
-            left: 0;
-            width: 100%; /* Full width */
-            padding: 10px;
-            background-color: #fce29a; /* Yellow color */
-            color: #444;
-            border-top: 2px solid #444; /* Darker color for the top border */
-            visibility: hidden; /* Initially hidden */
-            opacity: 0; /* Initially transparent */
-            transition: opacity 0.5s ease-in-out; /* Smooth transition */
+            margin-top: 20px;
         }
 
         .navigation-button {
@@ -102,6 +92,8 @@
             text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
+            background-color: #fce29a; /* Yellow color */
+            color: #444;
         }
     </style>
 </head>
@@ -170,22 +162,6 @@
 
         showImage(currentIndex);
 
-        // JavaScript logic for project navigation here
-        document.addEventListener('scroll', function() {
-            // Adjust the visibility based on scroll position
-            const navigationBar = document.querySelector('.project-navigation');
-            const bottomOffset = document.documentElement.offsetHeight - window.innerHeight - window.scrollY;
-
-            if (bottomOffset <= 0) {
-                // If scrolled to the bottom, show the navigation bar
-                navigationBar.style.visibility = 'visible';
-                navigationBar.style.opacity = 1;
-            } else {
-                // Otherwise, hide the navigation bar
-                navigationBar.style.visibility = 'hidden';
-                navigationBar.style.opacity = 0;
-            }
-        });
     </script>
 
 </body>
