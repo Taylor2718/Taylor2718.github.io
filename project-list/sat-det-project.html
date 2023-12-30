@@ -92,8 +92,11 @@
 
         .navigation-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the buttons */
+            align-items: center;
             margin-top: 20px;
+            background-color: #f5f5dc; /* Beige background */
+            padding: 10px;
         }
 
         .navigation-button {
@@ -103,7 +106,9 @@
             cursor: pointer;
             background-color: #fce29a; /* Yellow color */
             color: #444;
+            margin: 0 10px; /* Add margin between buttons */
         }
+    </style>
     </style>
 </head>
 <body>
@@ -141,12 +146,6 @@
     </section>
     <!-- Navigation buttons below the project content -->
         <div class="navigation-buttons">
-            <a class="navigation-button" href="mnp-project.html">Previous Article</a>
-            <a class="navigation-button" href="templates-project.html">Next Article</a>
-        </div>
-
-        <!-- Project navigation bar at the bottom of the content -->
-        <div class="project-navigation-bar">
             <a class="navigation-button" href="mnp-project.html">Previous Article</a>
             <a class="navigation-button" href="templates-project.html">Next Article</a>
         </div>
