@@ -62,6 +62,50 @@
             color: #fce29a; /* Yellow color on hover */
         }
 
+        /* Project styles - Style the horizontal line */
+        hr {
+            height: 2px;
+            background-color: #fce29a; /* Yellow color */
+            border: none;
+            transition: width 0.3s; /* Add transition for smooth animation */
+        }
+
+        /* Increase line width on hover */
+        hr:hover {
+            width: 100%;
+        }
+
+        .project-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-list li {
+            margin-bottom: 20px;
+        }
+
+        .project-list a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .project-list p.project-date {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .project-list .project-line {
+            width: 30px; /* Set the initial width of the line */
+            height: 2px;
+            background-color: #fce29a; /* Adjust color as needed */
+            transition: width 0.3s; /* Add a smooth transition effect */
+        }
+
+        .project-list li:hover .project-line {
+            width: 100%; /* Expand the width on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -85,6 +129,65 @@
         <a href="writing.html">4. Writing</a>
         <a href="contact.html">5. Contact Me</a>
     </nav>
+
+    <section id="projects" class="centered-content">
+        <h2>Projects</h2>
+        <p>
+            Explore my various projects related to theoretical physics. From quantum mechanics to cosmology, each project reflects my commitment to unraveling the mysteries of the universe. You can find details and code repositories on my <a href="https://github.com/Taylor2718" target="_blank">GitHub</a>.
+        </p>
+        
+        <!-- Horizontal line -->
+        <hr>
+
+        <!-- Project List -->
+        <ul class="project-list">
+            <li>
+                <a href="project-list/sat-det-project.html">BSc Project: Satellite Detection</a>
+                <p class="project-date">Year 3, Term 1</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/templates-project.html">UROP 2023: Templates Project</a>
+                <p class="project-date"><em>Imperial Centre for Inference and Cosmology</em>, Summer 2023</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/thermal-snooker-project.html">Thermal Snooker Computational Project</a>
+                <p class="project-date">Year 2, Term 1</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/see-project.html">UROP 2022: SEE Project</a>
+                <p class="project-date"><em>Physics Education Research Group</em>, Summer 2022</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/quantum-project.html">Quantum Computating in Finance</a>
+                <p class="project-date"><em>JP Morgan</em>, July 2022</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/national-grid-project.html">Visit to Hinkley Point Power Station</a>
+                <p class="project-date"><em>National Grid</em>, July 2022</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/analogue-synth-project.html">Analogue Synthesiser Project</a>
+                <p class="project-date">Year 1, Term 3</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/higgs-project.html">Higgs Boson Computational Project</a>
+                <p class="project-date">Year 1, Term 3</p>
+                <div class="project-line"></div>
+            </li>
+            <li>
+                <a href="project-list/mnp-project.html">Magnetic Hyperthermia Project</a>
+                <p class="project-date"><em>University of York Computational Magnetism Group</em>, Summer 2020</p>
+                <div class="project-line"></div>
+            </li>
+        </ul>
+    </section>
     
 </body>
 </html>
