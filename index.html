@@ -52,6 +52,18 @@
         nav a {
             display: block; /* Each link on a new line */
             margin-bottom: 10px; /* Add some space between links */
+            color: #888; /* Plain grey color for non-highlighted links */
+            text-decoration: none;
+            transition: color 0.3s; /* Add transition for smooth color change */
+        }
+
+        nav a:hover {
+            color: #fce29a; /* Yellow color on hover */
+        }
+
+        /* Highlight the current section in yellow */
+        #about:hover, #about {
+            background-color: #fce29a; /* Yellow color */
         }
     </style>
 </head>
