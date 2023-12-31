@@ -44,9 +44,12 @@
         nav {
             border-left: 5px solid #fce29a; /* Yellow vertical line */
             padding-left: 10px; /* Add some space to the left of the list */
-            position: absolute;
+            position: fixed;
             top: 60px; /* Align with the top of the "About Me" title */
             right: calc(25% + 0px); /* Align with the right edge of centered content plus margin */
+            z-index: 2; /* Ensure navigation appears above the content */
+            width: 100%; /* Take full width when fixed */
+            background-color: #f5f5dc; /* Match the background color */
         }
 
         nav a {
@@ -58,9 +61,26 @@
             transition: color 0.3s; /* Add transition for smooth color change */
         }
 
-        nav a:hover {
-            color: #fce29a; /* Yellow color on hover */
+        nav a:before {
+            content: '';
+            position: absolute;
+            width: 10px; /* Small underline when not hovered */
+            height: 1px;
+            bottom: 0;
+            left: -15px; /* Position to the left of the link */
+            background-color: #888; /* Plain grey color */
+            transition: width 0.3s; /* Add transition for smooth width change */
         }
+
+        nav a:hover, nav a.active {
+            color: #fce29a; /* Yellow color on hover or when active */
+        }
+
+        nav a:hover:before, nav a.active:before {
+            width: 15px; /* Increase width on hover or when active */
+            background-color: #fce29a; /* Yellow color */
+        }
+
 
         /* Project styles - Style the horizontal line */
         hr {
@@ -124,10 +144,10 @@
     <!-- Navigation Section -->
     <nav>
         <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
-        <a href="projects.html">2. Projects</a>
-        <a href="teaching.html">3. Teaching</a>
-        <a href="writing.html">4. Writing</a>
-        <a href="contact.html">5. Contact Me</a>
+        <a href="#projects" onclick="scrollToSection('#projects')">2. Projects</a>
+        <a href="#teaching" onclick="scrollToSection('#teaching')">3. Teaching</a>
+        <a href="#writing" onclick="scrollToSection('#writing')">4. Writing</a>
+        <a href="#contact" onclick="scrollToSection('#contact')">5. Contact Me</a>
     </nav>
 
     <section id="projects" class="centered-content">
@@ -240,6 +260,42 @@
             If you have any questions or would like to get in touch, feel free to contact me at top21 at ic dot ac dot uk.
         </p>
     </section>
+
+    <script>
+        // JavaScript to set the active class to the current section link
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href').includes(current)) {
+                        a.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Function to smoothly scroll to a section
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(sectionId);
+            window.scrollTo({
+                top: section.offsetTop - 60, // Adjust for fixed navigation
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 </html>
