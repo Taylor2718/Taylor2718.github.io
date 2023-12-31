@@ -11,12 +11,14 @@
             background-color: #f5f5dc; /* Nice beige background */
             color: #444; /* Darker text color for better readability */
             padding: 20px;
+            display: flex;
+            justify-content: space-between; /* Space between children */
+
         }
 
         /* Centered content with 30% width */
         .centered-content {
             width: 30%;
-            margin: 0 auto;
             text-align: left; /* Align text to the left */
         }
 
@@ -40,10 +42,6 @@
             font-weight: bold;
         }
 
-        .flex-container {
-            display: flex;
-            align-items: baseline; /* Align items at the baseline */
-        }
 
         nav {
             border-left: 5px solid #fce29a; /* Yellow vertical line */
@@ -61,11 +59,9 @@
 
     <!-- About Me Section with Profile Picture -->
     <section id="about" class="centered-content">
-        <div class="flex-container">
         <h2>Taylor<br>Pomfret</h2>
         <div class="profile-container">
             <img class="profile-picture" src="images/TP-Square-PP.jpeg" alt="Profile Picture">
-        </div>
         </div>
         <p>
             Hello, I'm Taylor Pomfret, a passionate student of theoretical physics. I am dedicated to exploring the wonders of the universe through the lens of theoretical frameworks. My academic journey has been shaped by a curiosity for understanding the fundamental principles that govern the cosmos.
@@ -73,7 +69,7 @@
     </section>
 
     <!-- Navigation Section -->
-    <nav class="centered-content">
+    <nav>
         <a href="#about" onclick="scrollToSection('#about')">1. About Me</a>
         <a href="projects.html">2. Projects</a>
         <a href="teaching.html">3. Teaching</a>
