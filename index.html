@@ -242,11 +242,9 @@
         </p>
     </section>
 
-    <script>
+     <script>
         function scrollToSection(sectionId) {
-            const section = document.querySelector(sectionId);
-            window.scrollTo({
-                top: section.offsetTop - 60, // Adjusted for the fixed navbar height
+            document.querySelector(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
         }
