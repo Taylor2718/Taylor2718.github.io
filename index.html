@@ -49,25 +49,19 @@
             right: calc(25% + 0px); /* Align with the right edge of centered content plus margin */
         }
 
-        nav a:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px; /* Small underline when not hovered */
-            bottom: 0;
-            left: 0;
-            background-color: #888; /* Plain grey color */
-            transition: height 0.3s; /* Add transition for smooth height change */
+        nav a {
+            display: block; /* Each link on a new line */
+            margin-bottom: 10px; /* Add some space between links */
+            color: #888; /* Plain grey color for non-highlighted links */
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s; /* Add transition for smooth color change */
         }
 
-        nav a:hover, nav a.active {
-            color: #fce29a; /* Yellow color on hover or when active */
+        nav a:hover {
+            color: #fce29a; /* Yellow color on hover */
         }
 
-        nav a:hover:before, nav a.active:before {
-            height: 2px; /* Full underline on hover or when active */
-            background-color: #fce29a; /* Yellow color */
-        }
     </style>
 </head>
 <body>
@@ -91,42 +85,6 @@
         <a href="writing.html">4. Writing</a>
         <a href="contact.html">5. Contact Me</a>
     </nav>
-
-    <script>
-        // JavaScript to set the active class to the current section link
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            window.addEventListener('scroll', function () {
-                let current = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(a => {
-                    a.classList.remove('active');
-                    if (a.getAttribute('href').includes(current)) {
-                        a.classList.add('active');
-                    }
-                });
-            });
-        });
-
-        // Function to smoothly scroll to a section
-        function scrollToSection(sectionId) {
-            const section = document.querySelector(sectionId);
-            window.scrollTo({
-                top: section.offsetTop - 60, // Adjust for fixed navigation
-                behavior: 'smooth'
-            });
-        }
-    </script>
     
 </body>
 </html>
