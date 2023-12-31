@@ -44,12 +44,9 @@
         nav {
             border-left: 5px solid #fce29a; /* Yellow vertical line */
             padding-left: 10px; /* Add some space to the left of the list */
-            position: fixed;
+            position: absolute;
             top: 60px; /* Align with the top of the "About Me" title */
             right: calc(25% + 0px); /* Align with the right edge of centered content plus margin */
-            z-index: 2; /* Ensure navigation appears above the content */
-            width: 100%; /* Take full width when fixed */
-            background-color: #f5f5dc; /* Match the background color */
         }
 
         nav a {
@@ -61,24 +58,8 @@
             transition: color 0.3s; /* Add transition for smooth color change */
         }
 
-        nav a:before {
-            content: '';
-            position: absolute;
-            width: 10px; /* Small underline when not hovered */
-            height: 1px;
-            bottom: 0;
-            left: -15px; /* Position to the left of the link */
-            background-color: #888; /* Plain grey color */
-            transition: width 0.3s; /* Add transition for smooth width change */
-        }
-
-        nav a:hover, nav a.active {
-            color: #fce29a; /* Yellow color on hover or when active */
-        }
-
-        nav a:hover:before, nav a.active:before {
-            width: 15px; /* Increase width on hover or when active */
-            background-color: #fce29a; /* Yellow color */
+        nav a:hover {
+            color: #fce29a; /* Yellow color on hover */
         }
 
 
@@ -261,41 +242,6 @@
         </p>
     </section>
 
-    <script>
-        // JavaScript to set the active class to the current section link
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            window.addEventListener('scroll', function () {
-                let current = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(a => {
-                    a.classList.remove('active');
-                    if (a.getAttribute('href').includes(current)) {
-                        a.classList.add('active');
-                    }
-                });
-            });
-        });
-
-        // Function to smoothly scroll to a section
-        function scrollToSection(sectionId) {
-            const section = document.querySelector(sectionId);
-            window.scrollTo({
-                top: section.offsetTop - 60, // Adjust for fixed navigation
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
+    
 </body>
 </html>
