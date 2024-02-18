@@ -63,39 +63,38 @@
         }
 
         nav {
-    position: fixed;
-    top: 0; /* Align at the top */
-    right: 0;
-    z-index: 1000;
-    width: 100%; /* Full width */
-    background-color: #f5f5dc; /* Match the body background color */
-    padding: 10px 20px; /* Add padding to the top and sides */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
+            position: fixed;
+            top: 60px; /* Align with the top of the "About Me" title */
+            right: calc(25% + 0px); /* Align with the right edge of centered content plus margin */
+            z-index: 1000; /* Ensure the nav is on top of other elements */
 
-nav a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #888;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s;
-}
+        }
 
-/* Add a media query for smaller screens */
-@media screen and (max-width: 768px) {
+        nav a {
+            display: block; /* Each link on a new line */
+            margin-bottom: 10px; /* Add some space between links */
+            color: #888; /* Plain grey color for non-highlighted links */
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s; /* Add transition for smooth color change */
+        }
+
+        @media screen and (max-width: 768px) {
     nav {
-        top: 60px;
-        padding: 10px 0;
-        text-align: center; /* Center the links for smaller screens */
-        transform: translateX(0); /* Remove horizontal translation */
+        top: 0;
+        right: 0;
+        width: 100%; /* Full width for small screens */
+        text-align: center; /* Center the links */
+        background-color: #f5f5dc; /* Match the body background color */
+        padding: 10px 0; /* Add padding to the top and bottom */
     }
 
     nav a {
-        display: block;
-        margin: 0 0 10px;
+        display: inline-block; /* Display links inline */
+        margin: 0 10px; /* Add margin to the sides */
     }
 }
+
 
         nav a:hover {
             color: #fce29a; /* Yellow color on hover */
