@@ -62,36 +62,25 @@
             font-weight: bold;
         }
 
-        nav {
-    position: fixed;
-    top: 60px;
-    right: 0;
-    z-index: 1000;
-        }
-
         nav a {
-    display: block;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin: 0 10px;
     color: #888;
     text-decoration: none;
     position: relative;
     transition: color 0.3s;
-        }
+}
 
 /* Add a media query for smaller screens */
 @media screen and (max-width: 768px) {
     nav {
-        top: 0;
-        right: 0;
-        width: 100%; /* Full width for small screens */
-        text-align: center; /* Center the links */
-        background-color: #f5f5dc; /* Match the body background color */
-        padding: 10px 0; /* Add padding to the top and bottom */
+        top: 60px;
+        padding: 10px 0;
     }
 
     nav a {
-        display: inline-block; /* Display links inline */
-        margin: 0 10px; /* Add margin to the sides */
+        display: block;
+        margin: 0 0 10px;
     }
 }
 
