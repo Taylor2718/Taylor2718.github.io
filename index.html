@@ -62,7 +62,19 @@
             font-weight: bold;
         }
 
-        nav a {
+        nav {
+    position: fixed;
+    top: 0;
+    left: 50%; /* Center the navigation bar horizontally */
+    transform: translateX(-50%); /* Adjust to center properly */
+    z-index: 1000;
+    width: 100%;
+    background-color: #f5f5dc;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+nav a {
     display: inline-block;
     margin: 0 10px;
     color: #888;
@@ -76,6 +88,8 @@
     nav {
         top: 60px;
         padding: 10px 0;
+        text-align: center; /* Center the links for smaller screens */
+        transform: translateX(0); /* Remove horizontal translation */
     }
 
     nav a {
