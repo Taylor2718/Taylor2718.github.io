@@ -129,6 +129,7 @@
 
         .project-list li {
             margin-bottom: 20px;
+            cursor: pointer; /* Add cursor pointer for better UX */
         }
 
         .project-list a {
@@ -147,6 +148,19 @@
             height: 2px;
             background-color: #fce29a; /* Adjust color as needed */
             transition: width 0.3s; /* Add a smooth transition effect */
+        }
+
+        .project-list .project-details {
+            display: none; /* Initially hide the details */
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+            margin-top: 10px; /* Adjust margin as needed */
+        }
+
+        .project-list .project-details.active {
+            display: block;
+            max-height: 1000px; /* Adjust as needed */
         }
 
         .project-list li:hover .project-line {
@@ -194,51 +208,23 @@
 
         <!-- Project List -->
         <ul class="project-list">
-            <li>
-                <a href="projects/sat-det-project.html">BSc Project: Satellite Detection</a>
+            <li class="project-item" data-id="project-1">
+                <a href="#">BSc Project: Satellite Detection</a>
                 <p class="project-date">Year 3, Term 1</p>
                 <div class="project-line"></div>
+                <div class="project-details">
+                    <p>Details about the Satellite Detection project go here...</p>
+                </div>
             </li>
-            <li>
-                <a href="projects/templates-project.html">UROP 2023: Templates Project</a>
+            <li class="project-item" data-id="project-2">
+                <a href="#">UROP 2023: Templates Project</a>
                 <p class="project-date"><em>Imperial Centre for Inference and Cosmology</em>, Summer 2023</p>
                 <div class="project-line"></div>
+                <div class="project-details">
+                    <p>Details about the Templates Project go here...</p>
+                </div>
             </li>
-            <li>
-                <a href="projects/thermal-snooker-project.html">Thermal Snooker Computational Project</a>
-                <p class="project-date">Year 2, Term 1</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/see-project.html">UROP 2022: SEE Project</a>
-                <p class="project-date"><em>Physics Education Research Group</em>, Summer 2022</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/quantum-project.html">Quantum Computating in Finance</a>
-                <p class="project-date"><em>JP Morgan</em>, July 2022</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/national-grid-project.html">Visit to Hinkley Point Power Station</a>
-                <p class="project-date"><em>National Grid</em>, July 2022</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/analogue-synth-project.html">Analogue Synthesiser Project</a>
-                <p class="project-date">Year 1, Term 3</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/higgs-project.html">Higgs Boson Computational Project</a>
-                <p class="project-date">Year 1, Term 3</p>
-                <div class="project-line"></div>
-            </li>
-            <li>
-                <a href="projects/mnp-project.html">Magnetic Hyperthermia Project</a>
-                <p class="project-date"><em>University of York Computational Magnetism Group</em>, Summer 2020</p>
-                <div class="project-line"></div>
-            </li>
+            <!-- Add similar structure for other projects -->
         </ul>
 
     </section>
@@ -340,6 +326,13 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Collapsible project details
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.addEventListener('click', function () {
+                this.querySelector('.project-details').classList.toggle('active');
             });
         });
     </script>
