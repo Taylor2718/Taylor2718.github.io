@@ -20,20 +20,6 @@
             text-align: left; /* Align text to the left */
         }
 
-        /* Additional styling for subheading and project information */
-        .subheading {
-            font-style: italic;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .project-info {
-            font-style: italic;
-            color: #888;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
         /* Styles for sections */
         section {
             margin-top: 20px;
@@ -81,7 +67,19 @@
             height: 600px;
             border: none;
         }
+ /* Additional styling for subheading and project information */
+ .subheading {
+            font-style: italic;
+            color: #888;
+            margin-bottom: 10px;
+        }
 
+        .project-info {
+            font-style: italic;
+            color: #888;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
         /* Style the horizontal line */
         hr {
             height: 2px;
@@ -123,44 +121,54 @@
             margin: 0 10px; /* Add margin between buttons */
         }
     </style>
+    </style>
 </head>
 <body>
 
     <section id="projects" class="centered-content">
         <h2>Satellite Detection Project</h2>
-
-        <!-- Subheading for supervisor and date -->
         <div class="subheading">
-            <p>Supervised by: Dr. Michael Peel</p>
-            <p>Date: Term 1, Year 3</p>
+            <p>Supervised by: Dr Michael Peel</p>
+            <p>October 2023-January 2024</p>
         </div>
-
-        <!-- PNG Slideshow -->
+        <h3>Project Experience</h3>
+<p>info</p>
+ <!-- PNG Slideshow -->
         <h3>Slideshow</h3>
-        <div class="slideshow-container">
-            <!-- Your existing slideshow images -->
-            <div class="image-bar">
-                <div class="navigation-arrows" onclick="prevImage()">❮</div>
-                <div class="image-caption"></div>
-                <div class="navigation-arrows" onclick="nextImage()">❯</div>
-            </div>
-        </div>
+ <div class="slideshow-container">
+    <img class="slideshow-img active" src="images/sat-det-1.jpg" alt="Image 1">
+    <img class="slideshow-img" src="images/sat-det-2.jpg" alt="Image 2">
+    <img class="slideshow-img" src="images/sat-det-3.jpg" alt="Image 3">
+    <img class="slideshow-img" src="images/sat-det-4.jpg" alt="Image 4">
+    <img class="slideshow-img" src="images/sat-det-5.jpg" alt="Image 5">
+    <img class="slideshow-img" src="images/sat-det-6.jpg" alt="Image 6">
+    <img class="slideshow-img" src="images/sat-det-7.jpg" alt="Image 7">
+    <img class="slideshow-img" src="images/sat-det-8.jpg" alt="Image 8">
 
+    <!-- Image Bar with Navigation Arrows and Caption -->
+    <div class="image-bar">
+        <div class="navigation-arrows" onclick="prevImage()">❮</div>
+        <div class="image-caption"></div>
+        <div class="navigation-arrows" onclick="nextImage()">❯</div>
+    </div>
+</div>
         <!-- Horizontal line -->
         <hr>
 
         <!-- Slide Deck -->
         <h3>Slide Deck</h3>
+        <!-- Embed PDF presentation using iframe -->
         <div class="iframe-container">
             <iframe src="presentations/SatDet.pdf" height="600px"></iframe>
         </div>
     </section>
-
     <!-- Navigation buttons below the project content -->
-    <div class="navigation-buttons">
-        <a class="navigation-button" href="mnp-project.html">Magnetic Hyperthermia</a>
-        <a class="navigation-button" href="templates-project.html">UROP 2023</a>
-    </div>
+        <div class="navigation-buttons">
+            <a class="navigation-button" href="mnp-project.html">Magnetic Hyperthermia</a>
+            <a class="navigation-button" href="templates-project.html">UROP 2023</a>
+        </div>
+    </section>
+
 
     <!-- Include your JavaScript for slideshow effect here -->
     <script>
@@ -186,6 +194,7 @@
         }
 
         showImage(currentIndex);
+
     </script>
 
 </body>
